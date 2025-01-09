@@ -302,7 +302,7 @@ BEGIN
 			
 			// day mos file
 			
-			ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/base/mbcD/%ee%/%are%/%are%.mbc~ BEGIN
+			ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/base/mbcD/%ee%/%are%/%are%.mos~ BEGIN
 				COPY ~%MOD_FOLDER%/base/mbcD/%ee%/%are%/%are%.mos~ ~%biffdir%/%are2%.mos~
 					LPM ~DEBUG~
 				LAF ~BACKUP_BIFFING~ STR_VAR ext = ~.mos~ END
@@ -402,7 +402,7 @@ BEGIN
 			END
 			
 			// night mos
-			ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/base/mbcN/%ee%/%are%N/%are%N.mbc~ BEGIN						
+			ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/base/mbcN/%ee%/%are%N/%are%N.mos~ BEGIN						
 				COPY ~%MOD_FOLDER%/base/mbcN/%ee%/%are%N/%are%N.mos~ ~%biffdir%/%are2%N.mos~
 					LPM ~DEBUG~
 				LAF ~BACKUP_BIFFING~ STR_VAR ext = ~N.mos~ END
