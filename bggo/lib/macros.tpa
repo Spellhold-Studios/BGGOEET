@@ -238,9 +238,30 @@ BEGIN
 				END
 				PATCH_IF FILE_EXISTS ~%MOD_FOLDER%/base/are_patch/%are%_are.tpa~ BEGIN // add animation for braziers, candles ...
 					PATCH_INCLUDE ~%MOD_FOLDER%/base/are_patch/%are%_are.tpa~
-				END
-			END
+				END				
+			END	
 			BUT_ONLY
+			
+			// Get files from compressed biffs
+			//code by Argent77 https://github.com/Argent77/A7-BiffedAreasFix
+			LAF a7#get_are_resources
+				INT_VAR
+					compressed_only = 1
+					bmp = 1
+					mos = 1
+					tis = 1
+					wav = 1
+					wed = 1
+				STR_VAR
+					are_regexp = EVAL "^%are2%\.are$"
+				RET_ARRAY
+					resources
+				END
+			ACTION_PHP_EACH resources AS resource => ref_count BEGIN
+				PRINT ~Test~
+				COPY_EXISTING ~%resource%~ ~override~ IF_EXISTS
+			END
+			ACTION_CLEAR_ARRAY resources
 			
 			// biff only areas with tis and pvrz files
 			OUTER_SET area_biff = 0

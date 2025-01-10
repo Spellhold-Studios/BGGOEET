@@ -14,6 +14,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/lib/alter_searchmap.tpa~
 	INCLUDE ~%MOD_FOLDER%/lib/debug.tpa~
 	INCLUDE ~%MOD_FOLDER%/lib/a7_pvrz_tis.tpa~
+	INCLUDE ~%MOD_FOLDER%/lib/a7_area_references.tpa~
 
 	ACTION_IF GAME_IS ~eet bgee bg2ee~ BEGIN
 		OUTER_SPRINT ee ~ee~
