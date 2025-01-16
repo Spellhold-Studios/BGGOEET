@@ -258,7 +258,6 @@ BEGIN
 					resources
 				END
 			ACTION_PHP_EACH resources AS resource => ref_count BEGIN
-				PRINT ~Test~
 				COPY_EXISTING ~%resource%~ ~override~ IF_EXISTS
 			END
 			ACTION_CLEAR_ARRAY resources
